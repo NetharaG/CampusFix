@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusFix – Smart Campus Maintenance & Complaint Management</title>
+  <meta name="description" content="Report, track, and resolve campus maintenance issues with CampusFix." />
+  <link rel="stylesheet" href="/css/style.css" />
+  <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="/index.html" class="navbar__logo">
+        <span class="logo-icon">CF</span>
+        CampusFix
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="/index.html" class="navbar__link active">Home</a></li>
+        <li><a href="/report.html" class="navbar__link">Report Issue</a></li>
+        <li><a href="/dashboard.html" class="navbar__link">Dashboard</a></li>
+        <li><a href="/about.html" class="navbar__link">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <h1>Report. Track. <span class="highlight">Resolve.</span></h1>
+        <p class="hero__subtitle">Smart campus maintenance management made simple. Submit complaints, monitor progress, and keep your campus running smoothly.</p>
+        <div class="hero__actions">
+          <a href="/report.html" class="btn btn--accent btn--lg">📝 Report an Issue</a>
+          <a href="/dashboard.html" class="btn btn--secondary btn--lg">📊 View Dashboard</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__card">
+          <h4>📋 Live Overview</h4>
+          <div class="mini-stat"><span>Total Complaints</span><span id="heroTotal">0</span></div>
+          <div class="mini-stat"><span>Pending</span><span id="heroPending">0</span></div>
+          <div class="mini-stat"><span>In Progress</span><span id="heroProgress">0</span></div>
+          <div class="mini-stat"><span>Resolved</span><span id="heroResolved">0</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats Bar -->
+  <section class="container" style="margin-bottom: var(--space-6);">
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-card__icon stat-card__icon--blue">📋</div>
+        <div class="stat-card__value" id="statTotal">0</div>
+        <div class="stat-card__label">Total Complaints</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__icon stat-card__icon--amber">⏳</div>
+        <div class="stat-card__value" id="statPending">0</div>
+        <div class="stat-card__label">Pending</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__icon stat-card__icon--green">✅</div>
+        <div class="stat-card__value" id="statResolved">0</div>
+        <div class="stat-card__label">Resolved</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__icon stat-card__icon--red">🚨</div>
+        <div class="stat-card__value" id="statCritical">0</div>
+        <div class="stat-card__label">Critical Issues</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Statement -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="problem">
+        <div class="problem__text">
+          <span class="eyebrow" style="display:inline-block; font-size:0.8rem; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--blue-500); background:var(--blue-50); padding:4px 14px; border-radius:var(--radius-pill); margin-bottom:var(--space-2);">The Problem</span>
+          <h2>Maintenance issues get lost in the noise</h2>
+          <p>In colleges, students and staff constantly face maintenance problems — but reporting them is messy and untracked.</p>
+          <ul class="problem__list">
+            <li>💡 Broken lights and electrical faults go unreported for days</li>
+            <li>🌊 Water leakage damages classrooms and labs</li>
+            <li>🪑 Damaged furniture makes learning spaces unusable</li>
+            <li>📶 Wi-Fi and network issues disrupt online classes</li>
+            <li>🧪 Laboratory equipment failures stall practical sessions</li>
+            <li>🧹 Cleanliness issues affect campus hygiene</li>
+          </ul>
+        </div>
+        <div class="problem__visual">
+          <div class="big-number">70%</div>
+          <div class="big-label">of campus issues are reported verbally<br />and never properly tracked</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <span class="eyebrow">Features</span>
+        <h2>Everything you need to manage campus maintenance</h2>
+        <p>A centralized platform that replaces scattered reports with a structured, trackable system.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-card__icon">📝</div>
+          <h3>Easy Complaint Reporting</h3>
+          <p>Submit complaints in seconds with a structured form covering category, priority, location, and description.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🆔</div>
+          <h3>Unique Complaint IDs</h3>
+          <p>Every complaint gets a unique ID (CF001, CF002…) so you can reference and track it easily at any time.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">📊</div>
+          <h3>Live Dashboard</h3>
+          <p>See real-time statistics, search complaints, filter by category or priority, and sort by date — all in one place.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🔍</div>
+          <h3>Search & Filter</h3>
+          <p>Find any complaint instantly by searching keywords or filtering by category, priority, or current status.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">📈</div>
+          <h3>Status Timeline</h3>
+          <p>Track each complaint from Reported to Resolved with a visual timeline showing its current stage.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">💾</div>
+          <h3>Local Data Storage</h3>
+          <p>All complaints are stored in your browser using localStorage — no server or login required for this version.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__header">
+        <span class="eyebrow">How It Works</span>
+        <h2>From report to resolution in four steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-card__num">1</div>
+          <h4>Report an Issue</h4>
+          <p>Fill out the complaint form with details about the problem, location, and priority.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num">2</div>
+          <h4>Get a Tracking ID</h4>
+          <p>Receive a unique complaint ID instantly to reference your submission.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num">3</div>
+          <h4>Track on Dashboard</h4>
+          <p>Monitor your complaint's status on the dashboard with search and filters.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num">4</div>
+          <h4>View Resolution</h4>
+          <p>Check the details page for a visual timeline from Reported to Resolved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <span class="eyebrow">Benefits</span>
+        <h2>Why CampusFix matters</h2>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-item__icon">⚡</div>
+          <div>
+            <h4>Faster Response Times</h4>
+            <p>Structured reporting helps maintenance teams prioritize and act quickly on critical issues.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-item__icon">📋</div>
+          <div>
+            <h4>Centralized Tracking</h4>
+            <p>No more lost verbal complaints — everything is recorded and searchable in one dashboard.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-item__icon">🎯</div>
+          <div>
+            <h4>Prioritized Resolution</h4>
+            <p>Critical issues are flagged immediately, ensuring the most urgent problems get attention first.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-item__icon">📊</div>
+          <div>
+            <h4>Data-Driven Insights</h4>
+            <p>Statistics on complaint categories and resolution rates help identify recurring campus problems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="cta">
+        <h2>Ready to fix your campus?</h2>
+        <p>Start reporting maintenance issues today and keep your campus running smoothly.</p>
+        <a href="/report.html" class="btn btn--accent btn--lg">Report an Issue Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <h3>CampusFix</h3>
+        <p>Smart campus maintenance & complaint management system. Built as a Web Technology Lab project using HTML5, CSS3, and Vanilla JavaScript.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Pages</h4>
+        <a href="/index.html">Home</a>
+        <a href="/report.html">Report Issue</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/about.html">About</a>
+      </div>
+      <div class="footer__col">
+        <h4>Categories</h4>
+        <a href="/report.html">Electrical</a>
+        <a href="/report.html">Plumbing</a>
+        <a href="/report.html">Network</a>
+        <a href="/report.html">Laboratory</a>
+      </div>
+      <div class="footer__col">
+        <h4>Project</h4>
+        <a href="/about.html">About Project</a>
+        <a href="/about.html">Objectives</a>
+        <a href="/about.html">Future Enhancements</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      © 2026 CampusFix — Web Technology Lab Project. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

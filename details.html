@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complaint Details – CampusFix</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="/index.html" class="navbar__logo">
+        <span class="logo-icon">CF</span>
+        CampusFix
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="/index.html" class="navbar__link">Home</a></li>
+        <li><a href="/report.html" class="navbar__link">Report Issue</a></li>
+        <li><a href="/dashboard.html" class="navbar__link">Dashboard</a></li>
+        <li><a href="/about.html" class="navbar__link">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Complaint Details</h1>
+      <p>Full information and status timeline for the selected complaint.</p>
+    </div>
+  </header>
+
+  <!-- Details Content -->
+  <section class="section">
+    <div class="container">
+      <a href="/dashboard.html" class="back-link">← Back to Dashboard</a>
+
+      <!-- This content is dynamically populated by JavaScript -->
+      <div id="detailContent">
+        <!-- Loading / error placeholder -->
+        <div class="empty-state" id="notFoundState" style="display:none;">
+          <div class="empty-state__icon">❓</div>
+          <h3>Complaint Not Found</h3>
+          <p>The complaint you are looking for does not exist or may have been removed.</p>
+          <a href="/dashboard.html" class="btn btn--primary">Go to Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__bottom">
+      © 2026 CampusFix — Web Technology Lab Project. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="/js/details.js"></script>
+</body>
+</html>

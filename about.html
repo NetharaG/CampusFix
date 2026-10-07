@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – CampusFix</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="/index.html" class="navbar__logo">
+        <span class="logo-icon">CF</span>
+        CampusFix
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="/index.html" class="navbar__link">Home</a></li>
+        <li><a href="/report.html" class="navbar__link">Report Issue</a></li>
+        <li><a href="/dashboard.html" class="navbar__link">Dashboard</a></li>
+        <li><a href="/about.html" class="navbar__link active">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>About CampusFix</h1>
+      <p>Understanding the problem, the solution, and the road ahead.</p>
+    </div>
+  </header>
+
+  <!-- About Content -->
+  <section class="section">
+    <div class="container">
+
+      <!-- About CampusFix -->
+      <div class="about-section">
+        <h2><span class="icon">ℹ️</span> About CampusFix</h2>
+        <p>
+          CampusFix is a <strong>Smart Campus Maintenance &amp; Complaint Management System</strong>
+          built as an individual Web Technology Lab project. It provides a centralized platform where
+          students and staff can report maintenance issues — such as broken lights, water leakage,
+          damaged furniture, network problems, and laboratory equipment failures — and track them
+          from submission to resolution.
+        </p>
+        <p>
+          The application is built entirely with <strong>HTML5</strong>, <strong>CSS3</strong>, and
+          <strong>Vanilla JavaScript</strong>, with no frontend frameworks and no backend server.
+          All data is stored in the browser using <strong>localStorage</strong>.
+        </p>
+      </div>
+
+      <!-- Problem -->
+      <div class="about-section">
+        <h2><span class="icon">⚠️</span> Problem Statement</h2>
+        <p>
+          In colleges, students and staff frequently face maintenance problems including broken lights,
+          faulty fans, water leakage, damaged furniture, Wi-Fi/network issues, laboratory equipment
+          failures, classroom problems, cleanliness issues, and electrical faults.
+        </p>
+        <p>
+          Currently, these issues are often reported verbally or through messaging applications. This
+          makes it difficult to:
+        </p>
+        <ul class="about-list">
+          <li>Track which complaints have been submitted</li>
+          <li>Identify the priority of each issue</li>
+          <li>Monitor whether an issue has been resolved</li>
+          <li>Maintain a record of recurring problems</li>
+          <li>Assign responsibility and ensure accountability</li>
+        </ul>
+      </div>
+
+      <!-- Proposed Solution -->
+      <div class="about-section">
+        <h2><span class="icon">💡</span> Proposed Solution</h2>
+        <p>
+          CampusFix provides a <strong>centralized web application</strong> where students and staff
+          can submit maintenance complaints through a structured form and track their status through
+          a visual dashboard and status timeline.
+        </p>
+        <ul class="about-list">
+          <li>A complaint form captures all necessary details (name, department, location, category, priority, description, date)</li>
+          <li>Each complaint receives a unique ID (CF001, CF002, CF003, …) for easy reference</li>
+          <li>A dashboard displays live statistics and a searchable, filterable, sortable table of all complaints</li>
+          <li>A details page shows full complaint information and a visual status timeline from Reported to Resolved</li>
+          <li>All data persists in the browser using localStorage — no server or login required</li>
+        </ul>
+      </div>
+
+      <!-- Objectives -->
+      <div class="about-section">
+        <h2><span class="icon">🎯</span> Objectives</h2>
+        <ul class="about-list">
+          <li>Provide a simple, centralized platform for reporting campus maintenance issues</li>
+          <li>Replace untracked verbal/messaging-based reporting with a structured system</li>
+          <li>Generate unique complaint IDs for easy tracking and referencing</li>
+          <li>Display real-time statistics on complaint status and priority levels</li>
+          <li>Enable searching, filtering, and sorting of complaints on a dashboard</li>
+          <li>Show a visual status timeline from submission to resolution</li>
+          <li>Demonstrate practical use of HTML5, CSS3, and JavaScript (DOM, events, localStorage, JSON)</li>
+        </ul>
+      </div>
+
+      <!-- Benefits -->
+      <div class="about-section">
+        <h2><span class="icon">✅</span> Benefits</h2>
+        <ul class="about-list">
+          <li><strong>Faster response times</strong> — maintenance teams can prioritize critical issues</li>
+          <li><strong>Centralized tracking</strong> — no complaints get lost or forgotten</li>
+          <li><strong>Prioritized resolution</strong> — critical issues are immediately flagged</li>
+          <li><strong>Data-driven insights</strong> — statistics reveal recurring campus problems</li>
+          <li><strong>Transparency</strong> — students and staff can track complaint progress</li>
+          <li><strong>Accountability</strong> — every complaint has a unique ID and a status record</li>
+        </ul>
+      </div>
+
+      <!-- Future Enhancements -->
+      <div class="about-section">
+        <h2><span class="icon">🚀</span> Future Enhancements</h2>
+        <p>
+          This is a client-side prototype. Future versions of CampusFix can be extended with the following:
+        </p>
+        <ul class="about-list">
+          <li><strong>PHP backend</strong> or <strong>Servlet backend</strong> for server-side processing</li>
+          <li><strong>MySQL database</strong> for permanent complaint storage</li>
+          <li><strong>Admin login</strong> for maintenance staff to manage complaints</li>
+          <li><strong>Technician assignment</strong> to route complaints to the right personnel</li>
+          <li><strong>Email notifications</strong> when complaint status changes</li>
+          <li><strong>Real-time complaint tracking</strong> with live updates</li>
+          <li><strong>Analytics dashboard</strong> with charts and trend analysis</li>
+          <li><strong>Role-based access</strong> (students, staff, admins, technicians)</li>
+          <li><strong>Full CRUD operations</strong> (create, read, update, delete complaints)</li>
+        </ul>
+      </div>
+
+      <!-- Technologies -->
+      <div class="about-section">
+        <h2><span class="icon">🛠️</span> Technologies Used</h2>
+        <div class="tech-badges">
+          <span class="tech-badge">HTML5</span>
+          <span class="tech-badge">CSS3</span>
+          <span class="tech-badge">JavaScript (ES5+)</span>
+          <span class="tech-badge">localStorage API</span>
+          <span class="tech-badge">JSON</span>
+          <span class="tech-badge">DOM Manipulation</span>
+          <span class="tech-badge">Flexbox &amp; Grid</span>
+          <span class="tech-badge">Responsive Design</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__bottom">
+      © 2026 CampusFix — Web Technology Lab Project. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Minimal nav script shared across pages -->
+  <script>
+    (function () {
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      navToggle.addEventListener('click', function () {
+        navLinks.classList.toggle('open');
+      });
+      navLinks.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          navLinks.classList.remove('open');
+        });
+      });
+      var navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 10) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+      });
+    })();
+  </script>
+</body>
+</html>

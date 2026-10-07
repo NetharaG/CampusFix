@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard – CampusFix</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="/index.html" class="navbar__logo">
+        <span class="logo-icon">CF</span>
+        CampusFix
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="/index.html" class="navbar__link">Home</a></li>
+        <li><a href="/report.html" class="navbar__link">Report Issue</a></li>
+        <li><a href="/dashboard.html" class="navbar__link active">Dashboard</a></li>
+        <li><a href="/about.html" class="navbar__link">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Complaint Dashboard</h1>
+      <p>Track, search, and manage all campus maintenance complaints in one place.</p>
+    </div>
+  </header>
+
+  <!-- Dashboard Content -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Statistics Cards -->
+      <div class="dashboard-stats">
+        <div class="dash-stat">
+          <div class="dash-stat__icon" style="background:var(--blue-50); color:var(--blue-500);">📋</div>
+          <div class="dash-stat__value" id="dashTotal">0</div>
+          <div class="dash-stat__label">Total Complaints</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat__icon" style="background:var(--warning-50); color:var(--warning-500);">⏳</div>
+          <div class="dash-stat__value" id="dashPending">0</div>
+          <div class="dash-stat__label">Pending</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat__icon" style="background:var(--blue-50); color:var(--blue-600);">🔧</div>
+          <div class="dash-stat__value" id="dashProgress">0</div>
+          <div class="dash-stat__label">In Progress</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat__icon" style="background:var(--success-50); color:var(--success-500);">✅</div>
+          <div class="dash-stat__value" id="dashResolved">0</div>
+          <div class="dash-stat__label">Resolved</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat__icon" style="background:var(--error-50); color:var(--error-500);">🚨</div>
+          <div class="dash-stat__value" id="dashCritical">0</div>
+          <div class="dash-stat__label">Critical Issues</div>
+        </div>
+      </div>
+
+      <!-- Toolbar: Search & Filters -->
+      <div class="toolbar">
+        <div class="toolbar__search">
+          <label for="searchInput">Search</label>
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="form-control" placeholder="Search by ID, location, description..." />
+        </div>
+        <div>
+          <label for="filterCategory">Category</label>
+          <select id="filterCategory" class="form-control">
+            <option value="">All Categories</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Plumbing">Plumbing</option>
+            <option value="Network">Network</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Laboratory">Laboratory</option>
+            <option value="Classroom">Classroom</option>
+            <option value="Cleanliness">Cleanliness</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="filterPriority">Priority</label>
+          <select id="filterPriority" class="form-control">
+            <option value="">All Priorities</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+            <option value="Critical">Critical</option>
+          </select>
+        </div>
+        <div>
+          <label for="filterStatus">Status</label>
+          <select id="filterStatus" class="form-control">
+            <option value="">All Statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Under Review">Under Review</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Resolved">Resolved</option>
+          </select>
+        </div>
+        <div>
+          <label for="sortDate">Sort by Date</label>
+          <select id="sortDate" class="form-control">
+            <option value="desc">Newest First</option>
+            <option value="asc">Oldest First</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Results count -->
+      <p id="resultCount" style="margin-bottom:var(--space-2); color:var(--gray-500); font-size:0.9rem; font-weight:500;"></p>
+
+      <!-- Complaint Table -->
+      <div class="complaint-table-wrap">
+        <table class="complaint-table" id="complaintTable">
+          <colgroup>
+            <col class="col-id" />
+            <col class="col-cat" />
+            <col class="col-loc" />
+            <col class="col-pri" />
+            <col class="col-status" />
+            <col class="col-date" />
+            <col class="col-desc" />
+            <col class="col-action" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Complaint ID</th>
+              <th>Category</th>
+              <th>Location</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th class="sortable" id="sortDateHeader">Date <span class="sort-arrow">▼</span></th>
+              <th>Description</th>
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody id="complaintTableBody">
+            <!-- Rows are dynamically generated by JavaScript -->
+          </tbody>
+        </table>
+        <!-- Empty state is shown when no complaints exist -->
+        <div id="emptyState" class="empty-state" style="display:none;">
+          <div class="empty-state__icon">📭</div>
+          <h3>No Complaints Found</h3>
+          <p>There are no complaints matching your filters, or no complaints have been submitted yet.</p>
+          <a href="/report.html" class="btn btn--primary">Report an Issue</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__bottom">
+      © 2026 CampusFix — Web Technology Lab Project. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
