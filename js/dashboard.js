@@ -173,7 +173,7 @@
       // Event handler: store selected complaint ID in localStorage, then navigate
       btn.addEventListener('click', function () {
         localStorage.setItem('campusfix_selected_complaint', c.complaintId);
-        window.location.href = 'details.html?id=' + encodeURIComponent(c.complaintId);
+         window.location.href = `details.html?id=${complaintId}`;
       });
       tdAction.appendChild(btn);
       tr.appendChild(tdAction);
